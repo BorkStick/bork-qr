@@ -13,9 +13,6 @@ function App() {
     
         <Navbar />
 
-        
-
-      <h2>Enter URL</h2>
       <URLInput />
       
 
