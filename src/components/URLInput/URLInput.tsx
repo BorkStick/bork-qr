@@ -113,10 +113,11 @@ export default function URLInput() {
   }
 
   return (
-    <div className="url-input-container">
+    <div className="container mt-5 url-input-container">
+      <h2 className="text-center mb-4">Enter URL</h2>
       <div className="input-group mb-3">
         <select
-          className="form-select input-group-text col-6"
+          className="form-select"
           id="urlSelect"
           name="url"
           value={state.url}
@@ -127,30 +128,30 @@ export default function URLInput() {
           <option value="custom">Custom</option>
         </select>
 
-        {state.url === "custom" ? (
+        {state.url === "custom" && (
           <input
             type="text"
             name="customTld"
             placeholder="Enter custom TLD"
             value={state.customTld}
-            className="form-control col-6"
+            className="form-control"
             onChange={handleChange}
           />
-        ) : null}
+        )}
 
         <input
           type="text"
           name="slug"
           placeholder="slug"
           value={state.slug}
-          className="form-control col-6"
+          className="form-control"
           id="basic-url"
           aria-describedby="basic-addon3"
           onChange={handleChange}
         />
       </div>
 
-      <div className="logo-selection">
+      <div className="logo-selection mb-3">
         <select name="selectedLogo" value={state.selectedLogo} onChange={handleLogoChange} className="form-select mb-3">
           <option value="">Select a logo</option>
           {predefinedLogos.map((logo, index) => (
@@ -161,12 +162,14 @@ export default function URLInput() {
       </div>
 
       <h1 className="url-display">
-        {(state.url === "custom" ? state.customTld : state.url)}/{state.slug}
+        <a href={`${state.url === "custom" ? state.customTld : state.url}/${state.slug}`} target="_blank" rel="noopener noreferrer">
+          {(state.url === "custom" ? state.customTld : state.url)}/{state.slug}
+        </a>
       </h1>
       {state.qrCodeUrl && (
         <div className="qr-code-container">
-          <img src={state.qrCodeUrl} alt="Generated QR Code" className="qr-code" />
-          <button onClick={downloadQRCode} className="btn-download">Download QR Code</button>
+          <img src={state.qrCodeUrl} alt="Generated QR Code" className="qr-code mb-3" />
+          <button onClick={downloadQRCode} className="btn btn-primary btn-download">Download QR Code</button>
         </div>
       )}
     </div>
