@@ -74,7 +74,7 @@ export default function URLInput() {
                 const logo = new Image();
                 logo.src = state.selectedLogo;
                 logo.onload = () => {
-                  const logoSize = canvas.width / 5;
+                  const logoSize = canvas.width / 3;
                   const logoX = (canvas.width - logoSize) / 2;
                   const logoY = (canvas.height - logoSize) / 2;
                   context.drawImage(logo, logoX, logoY, logoSize, logoSize);
@@ -114,7 +114,7 @@ export default function URLInput() {
   }
 
   return (
-    <div className="container mt-5 url-input-container">
+    <div className="container mt-2 url-input-container">
       <h2 className="text-center mb-4">Enter URL</h2>
       <div className="row g-3 mb-3 justify-content-center align-items-center">
         <div className="col-12 col-md-8">
@@ -178,7 +178,7 @@ export default function URLInput() {
         </div>
       )}
 
-      <div className="logo-selection row g-3 mb-3 justify-content-center">
+      <div className="logo-selection row g-3 mb-2 justify-content-center">
         <div className="col-12 col-md-8">
           <select
             name="selectedLogo"

@@ -11,7 +11,7 @@ This project is a QR code generator built with Vite, React, and TypeScript. It a
 
 ## Preview
 
-![QR Code Generator Preview](./public/screenshot%20v1.png)
+![QR Code Generator Preview](./public/screenshot%20v2.png)
 
 ## Getting Started
 
